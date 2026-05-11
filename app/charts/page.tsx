@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useState ,useEffect } from "react";
 import Image from "next/image";
 
 const profil = [
@@ -13,13 +13,11 @@ const profil = [
 
 export default function AvatarPicker() {
   const [selectedAvatar, setSelectedAvatar] = useState<string | null>(null)
-  // ↑ null côté serveur → pas d'image rendue → pas de mismatch
-
-  // s'exécute uniquement côté client
-  useState(() => {
+  
+  useEffect(() => {
     const saved = localStorage.getItem("octyra-avatar") ?? profil[0].src
     setSelectedAvatar(saved)
-  })
+  }, [])
 
   const handleSelect = (e: React.ChangeEvent<HTMLSelectElement>) => {
     setSelectedAvatar(e.target.value)

@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
-import { createPriceSocket } from "@/lib/socket";
+import { createPriceSocket,SocketHandle  } from "@/lib/socket";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Skeleton } from "@/components/ui/skeleton";
 
@@ -64,8 +64,7 @@ interface Price {
 
 export default function PriceList() {
   const [prices, setPrices] = useState<Price[]>([]);
-  const wsRef = useRef<WebSocket | null>(null); // ← garde le ws en vie
-
+ const wsRef = useRef<SocketHandle | null>(null); 
   useEffect(() => {
     if (wsRef.current) return; // ← déjà connecté, on sort
 

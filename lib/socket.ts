@@ -10,6 +10,11 @@ interface Price {
   price: number
   change_24h: number
   currency: string
+  market_cap: number
+  circulating_supply: number
+  volume_24h: number
+  high_24h: number
+  low_24h: number
 }
 
 interface Candle {
