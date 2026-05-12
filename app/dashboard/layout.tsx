@@ -38,7 +38,7 @@ export default function DashboardLayout({
   return (
     <div className="flex h-screen overflow-hidden bg-white/5">
       
-      <div className="shrink-0 md:px-30">
+      <div className="shrink-0">
         <Sidebar user={{
           full_name: user?.full_name ?? "...",  
           plan: { name: user?.plan?.name ?? "..." } 
