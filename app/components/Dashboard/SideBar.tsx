@@ -12,6 +12,7 @@ import {
   LogOut,
   ChevronLeft,
   ChevronRight,
+  MessageCircle,
 } from "lucide-react";
 
 const navItems = [
@@ -19,6 +20,7 @@ const navItems = [
   { href: "/dashboard/bots", label: "Mes bots", icon: Bot },
   { href: "/dashboard/plan", label: "Mon plan", icon: CreditCard },
   { href: "/dashboard/news", label: "News", icon: Newspaper },
+  { href: "/dashboard/chat", label: "ARIA", icon: MessageCircle },
   { href: "/dashboard/settings", label: "Paramètres", icon: Settings },
 ];
 
