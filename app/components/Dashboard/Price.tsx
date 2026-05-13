@@ -108,10 +108,13 @@ export default function PriceList() {
 
       {/* Skeleton si pas encore chargé */}
       {!prices.length && (
-        <>
-          {[...Array(6)].map((_, i) => <SkeletonRow key={i} />)}
-        </>
-      )}
+  <div className="flex flex-col gap-2">
+    <p className="text-zinc-500 text-xs text-center py-2 animate-pulse">
+      ⏳ Chargement des prix depuis les marchés...
+    </p>
+    {[...Array(6)].map((_, i) => <SkeletonRow key={i} />)}
+  </div>
+)}
 
       {/* Lignes des prix */}
       {displayed.map((p) => (
