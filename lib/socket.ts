@@ -7,14 +7,15 @@ const WS_URL = process.env.NEXT_PUBLIC_API_URL
 
 interface Price {
   asset: string
+  name: string
   price: number
   change_24h: number
   currency: string
-  market_cap: number
-  circulating_supply: number
-  volume_24h: number
-  high_24h: number
-  low_24h: number
+  market_cap: number | null
+  circulating_supply: number | null
+  volume_24h: number | null
+  high_24h: number | null
+  low_24h: number | null
 }
 
 interface Candle {
